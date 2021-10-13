@@ -15,8 +15,7 @@ namespace OH.Team6
         [FunctionName("CreateRating")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            [CosmosDB(databaseName: "products", collectionName: "product-ratings", ConnectionStringSetting = "CosmosDbConnectionString"
-    )]IAsyncCollector<dynamic> documentsOut,
+            [CosmosDB(databaseName: "products", collectionName: "product-ratings", ConnectionStringSetting = "CosmosDbConnectionString")]IAsyncCollector<dynamic> documentsOut,
             ILogger log)
         {
             log.LogInformation("Function CreateRatings is running");
